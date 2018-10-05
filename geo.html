@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Geometry Challenge</title>
+<style type="text/css">
+    body {
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    canvas {
+        display: block;
+        margin: 0 auto;
+        background-color: white;
+    }
+</style>
+</head>
+<body>
+    <h1>Geometry Challenge</h1>
+    <canvas id="myCanvas" width="600" height="400">
+    </canvas>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var x = 10;
+    var y = 200;
+    var size = 50;
+	var number = 50;
+	var squares = [];
+	for(var i = 0; i<number; i++)
+	{
+		if(i==0)
+		{
+		squares[i] = {x:10, y:200, size:50};
+		}
+		else{
+		squares[i] = {x: squares[i-1].x + 50, Y: 200, size:50};
+		}
+		console.log(squares[i].x);
+	}
+	
+	
+		for(var i = 0; i<squares.length; i++)
+		{
+			ctx.beginPath();
+			ctx.rect(squares[i].x,squares[i].y,squares[i].size,squares[i].size);
+			ctx.fillStyle = "red";
+			ctx.fill();
+			
+			ctx.closePath();
+			console.log(i);
+		}
+	
+	
+	
+</script>
+</body>
+</html>
